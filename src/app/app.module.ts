@@ -14,7 +14,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { MlekaraService } from './services/mlekara.service';
-import { DialogOverviewExampleDialog } from './components/mlekara/dialogs/addMlekara.dialog';
+import { DialogOverviewExampleDialog } from './components/mlekara/addMlekara.dialog';
 import { FormsModule } from '@angular/forms';
 import { DialogYesNo } from './share/dialog-yes-no/yes-no.dialog';
 

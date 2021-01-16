@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MlekaraService } from 'src/app/services/mlekara.service';
 import { DialogYesNo } from 'src/app/share/dialog-yes-no/yes-no.dialog';
-import { DialogOverviewExampleDialog } from './dialogs/addMlekara.dialog';
+import { DialogOverviewExampleDialog } from './addMlekara.dialog';
 
 @Component({
   selector: 'app-mlekara',
