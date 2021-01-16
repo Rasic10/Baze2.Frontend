@@ -6,26 +6,44 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MlekaraComponent } from './components/mlekara/mlekara.component';
-import { KravaComponent } from './components/krava/krava.component';
+import { MatTableModule } from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
+import { MlekaraService } from './services/mlekara.service';
+import { DialogOverviewExampleDialog } from './components/mlekara/dialogs/addMlekara.dialog';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
+    DialogOverviewExampleDialog
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+
+    HttpClientModule,
 
     // Material
     MatButtonModule,
     MatSidenavModule,
+    MatTableModule,
+    MatIconModule,
+    MatMenuModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
 
   ],
-  providers: [],
+  providers: [MlekaraService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

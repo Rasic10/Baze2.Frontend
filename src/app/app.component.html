@@ -6,12 +6,12 @@
       Toggle extra text
     </button>
     <div>
-      <button routerLink="/mlekara" mat-raised-button>
+      <button class="manuButton" routerLink="/mlekara" mat-raised-button>
         Mlekara
       </button>
     </div>
     <div>
-      <button routerLink="/krava" mat-raised-button>
+      <button class="manuButton" routerLink="/krava" mat-raised-button>
         Krava
       </button>
     </div>
@@ -19,7 +19,7 @@
   </mat-drawer>
 
   <div class="example-sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle()">
+    <button class="menu" type="button" mat-button (click)="drawer.toggle()">
       Meni
     </button>
     <router-outlet></router-outlet>

@@ -1,20 +1,41 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MlekaraService } from 'src/app/services/mlekara.service';
+import { DialogOverviewExampleDialog } from './dialogs/addMlekara.dialog';
 
 @Component({
   selector: 'app-mlekara',
-  template: `
-    <p>
-      mlekara works!
-    </p>
-  `,
-  styles: [
-  ]
+  templateUrl: './mlekara.component.html',
+  styleUrls: ['./mlekara.component.scss']
 })
 export class MlekaraComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = ['SifraMlekare', 'Pib', 'NazivMlekare', 'MaticniBroj', 'PttMesta', 'Actoins'];
+  public dataSource = [];
+
+  animal: string;
+  name: string;
+
+  constructor(private http: HttpClient, 
+              private mlekaraService: MlekaraService,
+              public dialog: MatDialog,) { 
+                this.mlekaraService.get().subscribe(data => this.dataSource = data);
+              }
 
   ngOnInit(): void {
+    
   }
 
+  add() {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+      width: '250px',
+      data: {name: this.name, animal: this.animal}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
+  }
 }

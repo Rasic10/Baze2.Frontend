@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Dodaj Mlekaru</h1>
+<div mat-dialog-content fxLayout="row wrap" fxLayoutAlign="space-between center">
+  <mat-form-field>
+    <mat-label>Sifra mlekare</mat-label>
+    <input matInput [(ngModel)]="mlekara.sifraMlekare">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Pib</mat-label>
+    <input matInput [(ngModel)]="mlekara.pib">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Maticni broj</mat-label>
+    <input matInput [(ngModel)]="mlekara.maticniBroj">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Ptt mesta</mat-label>
+    <input matInput [(ngModel)]="mlekara.pttMesta">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Nazad</button>
+  <button class="dodajButton" mat-button [mat-dialog-close]="mlekara.sifraMlekare" cdkFocusInitial>Dodaj</button>
+</div>
