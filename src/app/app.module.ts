@@ -16,13 +16,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { MlekaraService } from './services/mlekara.service';
 import { DialogOverviewExampleDialog } from './components/mlekara/dialogs/addMlekara.dialog';
 import { FormsModule } from '@angular/forms';
+import { DialogYesNo } from './share/dialog-yes-no/yes-no.dialog';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
-    DialogOverviewExampleDialog
+
+    DialogOverviewExampleDialog,
+    DialogYesNo,
+    
   ],
   imports: [
     BrowserModule,

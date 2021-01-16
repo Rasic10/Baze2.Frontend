@@ -10,4 +10,8 @@ export class MlekaraService {
     get(): Observable<Mlekara[]> {
         return this.http.get<Mlekara[]>(`https://localhost:5001/api/mlekara`);
     }
+
+    delete(id: number) {
+        return this.http.delete<void>(`https://localhost:5001/api/mlekara/${id}`);
+    }
 }
