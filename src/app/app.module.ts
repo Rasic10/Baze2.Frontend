@@ -19,6 +19,8 @@ import { FormsModule } from '@angular/forms';
 import { DialogYesNo } from './share/dialog-yes-no/yes-no.dialog';
 import { DialogOk } from './share/dialog-ok/ok.dialog';
 import { UpdateMlekaraDialog } from './components/mlekara/dialogs/update-mlekara.dialog/updateMlekara.dialog';
+import { ObracunComponent } from './components/obracun/obracun.component';
+import { ObracunService } from './services/obracun.service';
 
 
 @NgModule({
@@ -30,6 +32,7 @@ import { UpdateMlekaraDialog } from './components/mlekara/dialogs/update-mlekara
     UpdateMlekaraDialog,
     DialogYesNo,
     DialogOk,
+    ObracunComponent,
     
   ],
   imports: [
@@ -51,7 +54,7 @@ import { UpdateMlekaraDialog } from './components/mlekara/dialogs/update-mlekara
     MatInputModule,
 
   ],
-  providers: [MlekaraService],
+  providers: [MlekaraService, ObracunService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

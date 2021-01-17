@@ -56,10 +56,23 @@ export class MlekaraComponent implements OnInit {
       this.dialog.open(UpdateMlekaraDialog, {
         width: '250px',
         data: mlekara
-      })
+      }).afterClosed().subscribe(result => {
+        if (result) {
+          this.mlekaraService.put(result).subscribe((response) => {
+            console.log("response: ");
+            console.log(response);
+            this.mlekaraService.get().subscribe(data => this.dataSource = data);
+          }, (result) => {
+            this.dialog.open(DialogOk, {
+              width: '450px',
+              data: {errorText: result.error.text}
+            });
+            console.log("errorText: " + result.error.text);
+            console.log(result);
+          })
+        }
+      });
     });
-
-    
   }
 
   delete(id: number) {
