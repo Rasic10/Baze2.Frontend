@@ -9,6 +9,10 @@
     <input matInput [(ngModel)]="mlekara.pib">
   </mat-form-field>
   <mat-form-field>
+    <mat-label>Naziv mlekare</mat-label>
+    <input matInput [(ngModel)]="mlekara.nazivMlekare">
+  </mat-form-field>
+  <mat-form-field>
     <mat-label>Maticni broj</mat-label>
     <input matInput [(ngModel)]="mlekara.maticniBroj">
   </mat-form-field>
@@ -19,5 +23,5 @@
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Nazad</button>
-  <button class="dodajButton" mat-button [mat-dialog-close]="mlekara.sifraMlekare" cdkFocusInitial>Dodaj</button>
+  <button type="submit" class="dodajButton" mat-button [mat-dialog-close]="mlekara.sifraMlekare" cdkFocusInitial (click)="onYesClick()">Dodaj</button>
 </div>

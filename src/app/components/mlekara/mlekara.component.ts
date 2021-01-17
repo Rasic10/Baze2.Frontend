@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MlekaraService } from 'src/app/services/mlekara.service';
+import { DialogOk } from 'src/app/share/dialog-ok/ok.dialog';
 import { DialogYesNo } from 'src/app/share/dialog-yes-no/yes-no.dialog';
 import { DialogOverviewExampleDialog } from './dialogs/add-mlekara.dialog/addMlekara.dialog';
 
@@ -35,8 +36,20 @@ export class MlekaraComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.animal = result;
+      if (result) {
+        this.mlekaraService.post(result).subscribe((response) => {
+          console.log("123");
+          console.log("123" + response);
+          this.mlekaraService.get().subscribe(data => this.dataSource = data);
+        }, (result) => {
+          this.dialog.open(DialogOk, {
+            width: '450px',
+            data: {errorText: result.error.text}
+          });
+          console.log("123" + result.error.text);
+          console.log(result);
+        })
+      }
     });
   }
 

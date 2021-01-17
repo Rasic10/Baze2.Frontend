@@ -1,4 +1,4 @@
-export interface Mlekara {
+export class Mlekara {
     sifraMlekare: string;
     pib: string;
     nazivMlekare: string;

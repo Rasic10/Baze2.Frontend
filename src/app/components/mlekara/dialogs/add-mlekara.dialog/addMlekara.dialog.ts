@@ -9,11 +9,19 @@ import { Mlekara } from "src/app/models/mlekara";
   })
   export class DialogOverviewExampleDialog {
 
+    mlekara: Mlekara;
+
     constructor(
       public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-      @Inject(MAT_DIALOG_DATA) public mlekara: Mlekara) {}
+      @Inject(MAT_DIALOG_DATA) public data: any) {
+        this.mlekara = new Mlekara();
+      }
   
     onNoClick(): void {
-      this.dialogRef.close();
+      this.dialogRef.close(false);
+    }
+
+    onYesClick(): void {
+      this.dialogRef.close(this.mlekara);
     }
 }
