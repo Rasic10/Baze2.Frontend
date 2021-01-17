@@ -19,11 +19,11 @@ import { FormsModule } from '@angular/forms';
 import { DialogYesNo } from './share/dialog-yes-no/yes-no.dialog';
 import { DialogOk } from './share/dialog-ok/ok.dialog';
 import { UpdateMlekaraDialog } from './components/mlekara/dialogs/update-mlekara.dialog/updateMlekara.dialog';
-import { ObracunComponent } from './components/obracun/obracun.component';
 import { ObracunService } from './services/obracun.service';
 import { KravaService } from './services/krava.service';
 import { PolPipe } from './share/pipe-pol/PolPipe';
 import { RasaPipe } from './share/pipe-pol/RasaPipe';
+import { PodaciOMuziService } from './services/podaci-o-muzi.service';
 
 
 @NgModule({
@@ -60,7 +60,7 @@ import { RasaPipe } from './share/pipe-pol/RasaPipe';
     MatInputModule,
 
   ],
-  providers: [MlekaraService, ObracunService, KravaService],
+  providers: [MlekaraService, ObracunService, KravaService, PodaciOMuziService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

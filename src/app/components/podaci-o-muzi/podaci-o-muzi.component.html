@@ -1,0 +1,50 @@
+<div class="page-content" fxLayout="row wrap">
+    <!-- <div class="page-title">Mlekara</div> -->
+    <div class="page-actions">
+        <div>
+            <button class="addButton" mat-raised-button (click)="add()">
+                Dodaj Podatak O Muzi
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="page-content is-page-content" fxLayout="row wrap">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="rbPodatakOMuzi">
+            <th mat-header-cell *matHeaderCellDef> rb Podatak O Muzi </th>
+            <td mat-cell *matCellDef="let element"> {{element.rbPodatakOMuzi}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="idZivotinje">
+            <th mat-header-cell *matHeaderCellDef> Id Zivotinje </th>
+            <td id="contact-cell" mat-cell *matCellDef="let element"> {{element.idZivotinje}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="kolicinaMleka">
+            <th mat-header-cell *matHeaderCellDef> Kolicina Mleka </th>
+            <td mat-cell *matCellDef="let element"> {{element.kolicinaMleka}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="vremeMuze">
+            <th mat-header-cell *matHeaderCellDef> Vreme Muze </th>
+            <td mat-cell *matCellDef="let element"> {{element.vremeMuze | date: 'mediumTime'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Actions">
+            <th class="actions`" mat-header-cell *matHeaderCellDef></th>
+            <td class="form-filed" mat-cell *matCellDef="let element; let i = index"> 
+                <button mat-button [matMenuTriggerFor]="menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="update(element.sifraMlekare)">Izmeni</button>
+                    <button mat-menu-item (click)="delete(element.sifraMlekare)">Obrisi</button>
+                  </mat-menu>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

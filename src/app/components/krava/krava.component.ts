@@ -17,8 +17,7 @@ export class KravaComponent implements OnInit {
   constructor(private http: HttpClient,
     private kravaService: KravaService,
     public dialog: MatDialog,) {
-      this.kravaService.get().subscribe(data => {this.dataSource = data; 
-      console.log(this.dataSource)});
+      this.kravaService.get().subscribe(data => this.dataSource = data);
      }
 
   ngOnInit(): void {
