@@ -18,6 +18,7 @@ import { DialogOverviewExampleDialog } from './components/mlekara/dialogs/add-ml
 import { FormsModule } from '@angular/forms';
 import { DialogYesNo } from './share/dialog-yes-no/yes-no.dialog';
 import { DialogOk } from './share/dialog-ok/ok.dialog';
+import { UpdateMlekaraDialog } from './components/mlekara/dialogs/update-mlekara.dialog/updateMlekara.dialog';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { DialogOk } from './share/dialog-ok/ok.dialog';
     routingComponents,
 
     DialogOverviewExampleDialog,
+    UpdateMlekaraDialog,
     DialogYesNo,
     DialogOk,
     

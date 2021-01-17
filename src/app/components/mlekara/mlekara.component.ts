@@ -5,6 +5,7 @@ import { MlekaraService } from 'src/app/services/mlekara.service';
 import { DialogOk } from 'src/app/share/dialog-ok/ok.dialog';
 import { DialogYesNo } from 'src/app/share/dialog-yes-no/yes-no.dialog';
 import { DialogOverviewExampleDialog } from './dialogs/add-mlekara.dialog/addMlekara.dialog';
+import { UpdateMlekaraDialog } from './dialogs/update-mlekara.dialog/updateMlekara.dialog';
 
 @Component({
   selector: 'app-mlekara',
@@ -32,25 +33,33 @@ export class MlekaraComponent implements OnInit {
   add() {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
       width: '250px',
-      data: {name: this.name, animal: this.animal}
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
+    }).afterClosed().subscribe(result => {
       if (result) {
         this.mlekaraService.post(result).subscribe((response) => {
-          console.log("123");
-          console.log("123" + response);
+          console.log("response: ");
+          console.log(response);
           this.mlekaraService.get().subscribe(data => this.dataSource = data);
         }, (result) => {
           this.dialog.open(DialogOk, {
             width: '450px',
             data: {errorText: result.error.text}
           });
-          console.log("123" + result.error.text);
+          console.log("errorText: " + result.error.text);
           console.log(result);
         })
       }
     });
+  }
+
+  update(id: number) {
+    this.mlekaraService.getById(id).subscribe(mlekara => {
+      this.dialog.open(UpdateMlekaraDialog, {
+        width: '250px',
+        data: mlekara
+      })
+    });
+
+    
   }
 
   delete(id: number) {

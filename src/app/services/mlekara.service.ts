@@ -11,6 +11,10 @@ export class MlekaraService {
         return this.http.get<Mlekara[]>(`https://localhost:5001/api/mlekara`);
     }
 
+    getById(id: number): Observable<Mlekara> {
+        return this.http.get<Mlekara>(`https://localhost:5001/api/mlekara/${id}`);
+    }
+
     post(mlekara: Mlekara): Observable<Mlekara> {
         return this.http.post<Mlekara>(`https://localhost:5001/api/mlekara`, mlekara);
     }
