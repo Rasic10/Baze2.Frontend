@@ -20,14 +20,14 @@ export class MlekaraComponent implements OnInit {
   animal: string;
   name: string;
 
-  constructor(private http: HttpClient, 
-              private mlekaraService: MlekaraService,
-              public dialog: MatDialog,) { 
-                this.mlekaraService.get().subscribe(data => this.dataSource = data);
-              }
+  constructor(private http: HttpClient,
+    private mlekaraService: MlekaraService,
+    public dialog: MatDialog,) {
+    this.mlekaraService.get().subscribe(data => this.dataSource = data);
+  }
 
   ngOnInit(): void {
-    
+
   }
 
   add() {
@@ -42,7 +42,7 @@ export class MlekaraComponent implements OnInit {
         }, (result) => {
           this.dialog.open(DialogOk, {
             width: '450px',
-            data: {errorText: result.error.text}
+            data: { errorText: result.error.text }
           });
           console.log("errorText: " + result.error.text);
           console.log(result);
@@ -65,7 +65,7 @@ export class MlekaraComponent implements OnInit {
           }, (result) => {
             this.dialog.open(DialogOk, {
               width: '450px',
-              data: {errorText: result.error.text}
+              data: { errorText: result.error.text }
             });
             console.log("errorText: " + result.error.text);
             console.log(result);
@@ -81,7 +81,7 @@ export class MlekaraComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if(result) {
+      if (result) {
         this.mlekaraService.delete(id).subscribe(() => {
           this.mlekaraService.get().subscribe(data => this.dataSource = data);
         });

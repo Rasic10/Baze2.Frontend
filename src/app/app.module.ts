@@ -21,6 +21,9 @@ import { DialogOk } from './share/dialog-ok/ok.dialog';
 import { UpdateMlekaraDialog } from './components/mlekara/dialogs/update-mlekara.dialog/updateMlekara.dialog';
 import { ObracunComponent } from './components/obracun/obracun.component';
 import { ObracunService } from './services/obracun.service';
+import { KravaService } from './services/krava.service';
+import { PolPipe } from './share/pipe-pol/PolPipe';
+import { RasaPipe } from './share/pipe-pol/RasaPipe';
 
 
 @NgModule({
@@ -32,8 +35,11 @@ import { ObracunService } from './services/obracun.service';
     UpdateMlekaraDialog,
     DialogYesNo,
     DialogOk,
-    ObracunComponent,
     
+    // my custom pipes
+    RasaPipe,
+    PolPipe,
+
   ],
   imports: [
     BrowserModule,
@@ -54,7 +60,7 @@ import { ObracunService } from './services/obracun.service';
     MatInputModule,
 
   ],
-  providers: [MlekaraService, ObracunService],
+  providers: [MlekaraService, ObracunService, KravaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
