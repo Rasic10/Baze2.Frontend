@@ -31,6 +31,7 @@ import { AddPodaciOMuziDialog } from './components/podaci-o-muzi/dialogs/add-pod
 import { UpdateKravaDialog } from './components/krava/dialogs/update-krava.dialog/update-krava.dialog';
 import { ZaposlenService } from './services/zaposleni.service';
 import { AddZaposlenDialog } from './components/zaposlen/dialogs/add-zaposleni.dialog/add-zaposlen';
+import { AddKravaDialog } from './components/krava/dialogs/add-krava.dialog/add-krava.dialog';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { AddZaposlenDialog } from './components/zaposlen/dialogs/add-zaposleni.d
     AddPodaciOMuziDialog,
     UpdateKravaDialog,
     AddZaposlenDialog,
+    AddKravaDialog,
 
     // share dialogs
     DialogYesNo,

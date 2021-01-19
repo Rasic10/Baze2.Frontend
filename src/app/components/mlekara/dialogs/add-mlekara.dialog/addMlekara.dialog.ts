@@ -15,6 +15,7 @@ import { Mlekara } from "src/app/models/mlekara";
       public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
       @Inject(MAT_DIALOG_DATA) public data: any) {
         this.mlekara = new Mlekara();
+        console.log(this.mlekara);
       }
   
     onNoClick(): void {

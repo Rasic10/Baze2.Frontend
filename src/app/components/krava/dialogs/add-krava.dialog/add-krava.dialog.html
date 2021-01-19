@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Izmeni Zivotinju</h1>
+<h1 mat-dialog-title>Dodaj Zivotinju</h1>
 <div mat-dialog-content fxLayout="row wrap" fxLayoutAlign="space-between center">
   <mat-form-field>
     <mat-label>Id zivotinje</mat-label>
@@ -16,10 +16,10 @@
     <mat-label>Id zivotinje majke</mat-label>
     <input matInput [(ngModel)]="krava.idZivotinjeMajke">
   </mat-form-field>
-  <!-- <mat-form-field>
+  <mat-form-field>
     <mat-label>Pol</mat-label>
-    <input matInput [(ngModel)]="krava.pol">
-  </mat-form-field> -->
+    <input matInput [(ngModel)]="pol">
+  </mat-form-field>
   <mat-form-field>
     <mat-label>Rasa Naziv</mat-label>
     <input matInput [(ngModel)]="krava.rasa.naziv">
@@ -28,13 +28,8 @@
     <mat-label>Rasa Boja</mat-label>
     <input matInput [(ngModel)]="krava.rasa.boja">
   </mat-form-field>
-  <mat-form-field>
-    <mat-label>Trenutna kolicina mleka</mat-label>
-    <input matInput [(ngModel)]="krava.trenutnaKolicinaMleka">
-  </mat-form-field>
 </div>
-
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Nazad</button>
-  <button type="submit" class="dodajButton" mat-button [mat-dialog-close]="krava.idZivotinje" cdkFocusInitial (click)="onYesClick()">Izmeni</button>
+  <button type="submit" class="dodajButton" mat-button [mat-dialog-close]="krava.idZivotinje" cdkFocusInitial (click)="onYesClick()">Dodaj</button>
 </div>

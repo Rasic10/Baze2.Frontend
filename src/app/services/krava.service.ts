@@ -11,15 +11,25 @@ export class KravaService {
         return this.http.get<Krava[]>(`https://localhost:5001/api/krava`);
     }
 
+    getKrava(): Observable<Krava[]> {
+        return this.http.get<Krava[]>(`https://localhost:5001/api/krava/krava`);
+    }
+
+    getBik(): Observable<Krava[]> {
+        return this.http.get<Krava[]>(`https://localhost:5001/api/krava/bik`);
+    }
+
     getById(id: number): Observable<Krava> {
         return this.http.get<Krava>(`https://localhost:5001/api/krava/${id}`);
     }
 
-    // post(mlekara: Mlekara): Observable<Mlekara> {
-    //     return this.http.post<Mlekara>(`https://localhost:5001/api/mlekara`, mlekara);
-    // }
+    post(krava: Krava): Observable<Krava> {
+        console.log("asd" + krava);
+        return this.http.post<Krava>(`https://localhost:5001/api/krava`, krava);
+    }
 
     put(krava: Krava): Observable<Krava> {
+        console.log("asd" + krava);
         return this.http.put<Krava>(`https://localhost:5001/api/krava`, krava);
     }
 

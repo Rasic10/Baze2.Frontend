@@ -8,7 +8,7 @@ export class Krava {
     trenutnaKolicinaMleka: number;
 }
 
-export type Rasa = {
+export class Rasa {
     naziv: string;
     boja: string;
 }
