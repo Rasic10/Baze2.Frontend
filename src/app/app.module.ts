@@ -29,6 +29,7 @@ import { RasaPipe } from './share/pipe-pol/RasaPipe';
 import { PodaciOMuziService } from './services/podaci-o-muzi.service';
 import { AddPodaciOMuziDialog } from './components/podaci-o-muzi/dialogs/add-podaci-o-muzi.dialog/add-podaci-o-muzi.dialog';
 import { UpdateKravaDialog } from './components/krava/dialogs/update-krava.dialog/update-krava.dialog';
+import { ZaposlenService } from './services/zaposleni.service';
 
 
 @NgModule({
@@ -75,7 +76,7 @@ import { UpdateKravaDialog } from './components/krava/dialogs/update-krava.dialo
     NgxMatDatetimePickerModule,
 
   ],
-  providers: [MlekaraService, ObracunService, KravaService, PodaciOMuziService],
+  providers: [MlekaraService, ObracunService, KravaService, PodaciOMuziService, ZaposlenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

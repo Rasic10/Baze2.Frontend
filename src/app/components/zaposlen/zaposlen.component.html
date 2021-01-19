@@ -1,0 +1,62 @@
+<div class="page-content" fxLayout="row wrap">
+    <!-- <div class="page-title">Mlekara</div> -->
+    <div class="page-actions">
+        <div>
+            <button class="addButton" mat-raised-button (click)="add()">
+                Dodaj Zaposlenog
+            </button>
+        </div>
+    </div>
+</div>
+
+<div>
+    <p>Zaposlen osnovno</p>
+</div>
+
+<div class="page-content is-page-content" fxLayout="row wrap">
+    <table mat-table [dataSource]="dataSourceOsnovno" class="mat-elevation-z8">
+        <ng-container matColumnDef="sifraZaposlenog">
+            <th mat-header-cell *matHeaderCellDef> Sifra Zaposlenog </th>
+            <td id="contact-cell" mat-cell *matCellDef="let element"> {{element.sifraZaposlenog}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ime">
+            <th mat-header-cell *matHeaderCellDef> Ime </th>
+            <td mat-cell *matCellDef="let element"> {{element.ime}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="prezime">
+            <th mat-header-cell *matHeaderCellDef> Prezime </th>
+            <td mat-cell *matCellDef="let element"> {{element.prezime}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsOsnovno"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsOsnovno;"></tr>
+    </table>
+</div>
+
+<div>
+    <p>Zaposlen detaljno</p>
+</div>
+
+<div class="page-content is-page-content" fxLayout="row wrap">
+    <table mat-table [dataSource]="dataSourceDetaljno" class="mat-elevation-z8">
+        <ng-container matColumnDef="sifraZaposlenog">
+            <th mat-header-cell *matHeaderCellDef> Sifra Zaposlenog </th>
+            <td id="contact-cell" mat-cell *matCellDef="let element"> {{element.sifraZaposlenog}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="jmbg">
+            <th mat-header-cell *matHeaderCellDef> Jmbg </th>
+            <td mat-cell *matCellDef="let element"> {{element.jmbg}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="brLicneKarte">
+            <th mat-header-cell *matHeaderCellDef> Broj Licne Karte </th>
+            <td mat-cell *matCellDef="let element"> {{element.brLicneKarte}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsDetaljno"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsDetaljno;"></tr>
+    </table>
+</div>
