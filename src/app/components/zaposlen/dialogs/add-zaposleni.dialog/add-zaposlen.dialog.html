@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Dodaj Zaposlenog</h1>
+<div mat-dialog-content fxLayout="row wrap" fxLayoutAlign="space-between center">
+  <mat-form-field>
+    <mat-label>Sifra Zaposlenog</mat-label>
+    <input matInput [(ngModel)]="zaposlen.sifraZaposlenog">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Ime</mat-label>
+    <input matInput [(ngModel)]="zaposlen.ime">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Prezime</mat-label>
+    <input matInput [(ngModel)]="zaposlen.prezime">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Jmbg</mat-label>
+    <input matInput [(ngModel)]="zaposlen.jmbg">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>br Licne Karte</mat-label>
+    <input matInput [(ngModel)]="zaposlen.brLicneKarte">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Nazad</button>
+  <button type="submit" class="dodajButton" mat-button [mat-dialog-close]="zaposlen.sifraZaposlenog" cdkFocusInitial (click)="onYesClick()">Dodaj</button>
+</div>

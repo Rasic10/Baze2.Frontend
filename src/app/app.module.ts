@@ -30,6 +30,7 @@ import { PodaciOMuziService } from './services/podaci-o-muzi.service';
 import { AddPodaciOMuziDialog } from './components/podaci-o-muzi/dialogs/add-podaci-o-muzi.dialog/add-podaci-o-muzi.dialog';
 import { UpdateKravaDialog } from './components/krava/dialogs/update-krava.dialog/update-krava.dialog';
 import { ZaposlenService } from './services/zaposleni.service';
+import { AddZaposlenDialog } from './components/zaposlen/dialogs/add-zaposleni.dialog/add-zaposlen';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { ZaposlenService } from './services/zaposleni.service';
     UpdateMlekaraDialog,
     AddPodaciOMuziDialog,
     UpdateKravaDialog,
+    AddZaposlenDialog,
 
     // share dialogs
     DialogYesNo,
