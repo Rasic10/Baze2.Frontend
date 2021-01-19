@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Dodaj Podatak O Muzi</h1>
+<div mat-dialog-content fxLayout="row wrap" fxLayoutAlign="space-between center">
+  <mat-form-field>
+    <mat-label>rb Podatak O Muzi</mat-label>
+    <input matInput [(ngModel)]="podaciOMuzi.rbPodatakOMuzi">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Id Zivotinje</mat-label>
+    <input matInput [(ngModel)]="podaciOMuzi.idZivotinje">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Kolicina Mleka</mat-label>
+    <input matInput [(ngModel)]="podaciOMuzi.kolicinaMleka">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Vreme Muze</mat-label>
+    <input type="time" matInput [(ngModel)]="podaciOMuzi.vremeMuze">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Nazad</button>
+  <button type="submit" class="dodajButton" mat-button [mat-dialog-close]="podaciOMuzi.rbPodatakOMuzi" cdkFocusInitial
+    (click)="onYesClick()">Dodaj</button>
+</div>

@@ -15,9 +15,9 @@ export class PodaciOMuziService {
     //     return this.http.get<Mlekara>(`https://localhost:5001/api/mlekara/${id}`);
     // }
 
-    // post(mlekara: Mlekara): Observable<Mlekara> {
-    //     return this.http.post<Mlekara>(`https://localhost:5001/api/mlekara`, mlekara);
-    // }
+    post(podaciOMuzi: PodaciOMuzi): Observable<PodaciOMuzi> {
+        return this.http.post<PodaciOMuzi>(`https://localhost:5001/api/podaciomuzi`, podaciOMuzi);
+    }
 
     // put(mlekara: Mlekara): Observable<Mlekara> {
     //     return this.http.put<Mlekara>(`https://localhost:5001/api/mlekara`, mlekara);

@@ -12,6 +12,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
+
 import { HttpClientModule } from '@angular/common/http';
 import { MlekaraService } from './services/mlekara.service';
 import { DialogOverviewExampleDialog } from './components/mlekara/dialogs/add-mlekara.dialog/addMlekara.dialog';
@@ -24,6 +27,8 @@ import { KravaService } from './services/krava.service';
 import { PolPipe } from './share/pipe-pol/PolPipe';
 import { RasaPipe } from './share/pipe-pol/RasaPipe';
 import { PodaciOMuziService } from './services/podaci-o-muzi.service';
+import { AddPodaciOMuziDialog } from './components/podaci-o-muzi/dialogs/add-podaci-o-muzi.dialog/add-podaci-o-muzi.dialog';
+import { UpdateKravaDialog } from './components/krava/dialogs/update-krava.dialog/update-krava.dialog';
 
 
 @NgModule({
@@ -31,8 +36,13 @@ import { PodaciOMuziService } from './services/podaci-o-muzi.service';
     AppComponent,
     routingComponents,
 
+    // dialogs
     DialogOverviewExampleDialog,
     UpdateMlekaraDialog,
+    AddPodaciOMuziDialog,
+    UpdateKravaDialog,
+
+    // share dialogs
     DialogYesNo,
     DialogOk,
     
@@ -58,6 +68,11 @@ import { PodaciOMuziService } from './services/podaci-o-muzi.service';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDatepickerModule,
+
+    //
+    NgxMatTimepickerModule,
+    NgxMatDatetimePickerModule,
 
   ],
   providers: [MlekaraService, ObracunService, KravaService, PodaciOMuziService],

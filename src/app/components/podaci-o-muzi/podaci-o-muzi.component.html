@@ -28,7 +28,7 @@
 
         <ng-container matColumnDef="vremeMuze">
             <th mat-header-cell *matHeaderCellDef> Vreme Muze </th>
-            <td mat-cell *matCellDef="let element"> {{element.vremeMuze | date: 'mediumTime'}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.vremeMuze | date: 'shortTime'}} </td>
         </ng-container>
 
         <ng-container matColumnDef="Actions">
