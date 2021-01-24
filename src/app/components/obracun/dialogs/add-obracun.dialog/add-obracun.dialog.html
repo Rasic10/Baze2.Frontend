@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Dodaj Obracun</h1>
+<div mat-dialog-content fxLayout="row wrap" fxLayoutAlign="space-between center">
+  <mat-form-field>
+    <mat-label>Sifra Obracuna</mat-label>
+    <input matInput [(ngModel)]="obracun.sifraObracuna">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Period Od</mat-label>
+    <input matInput [(ngModel)]="obracun.periodOd">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Period Do</mat-label>
+    <input matInput [(ngModel)]="obracun.periodDo">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Litara</mat-label>
+    <input matInput [(ngModel)]="obracun.litara">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Sifra Mlekare</mat-label>
+    <input matInput [(ngModel)]="obracun.sifraMlekare">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Nazad</button>
+  <button type="submit" class="dodajButton" mat-button [mat-dialog-close]="obracun.sifraMlekare" cdkFocusInitial (click)="onYesClick()">Dodaj</button>
+</div>

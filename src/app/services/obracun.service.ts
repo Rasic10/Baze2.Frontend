@@ -11,17 +11,19 @@ export class ObracunService {
         return this.http.get<Obracun[]>(`https://localhost:5001/api/obracun`);
     }
 
-    // getById(id: number): Observable<Mlekara> {
-    //     return this.http.get<Mlekara>(`https://localhost:5001/api/mlekara/${id}`);
-    // }
+    getById(id: number): Observable<Obracun> {
+        var o = this.http.get<Obracun>(`https://localhost:5001/api/obracun/${id}`);
+        console.log("Asd " + o);
+        return o;
+    }
 
-    // post(mlekara: Mlekara): Observable<Mlekara> {
-    //     return this.http.post<Mlekara>(`https://localhost:5001/api/mlekara`, mlekara);
-    // }
+    post(obracun: Obracun): Observable<Obracun> {
+        return this.http.post<Obracun>(`https://localhost:5001/api/obracun`, obracun);
+    }
 
-    // put(mlekara: Mlekara): Observable<Mlekara> {
-    //     return this.http.put<Mlekara>(`https://localhost:5001/api/mlekara`, mlekara);
-    // }
+    put(obracun: Obracun): Observable<Obracun> {
+        return this.http.put<Obracun>(`https://localhost:5001/api/obracun`, obracun);
+    }
 
     // delete(id: number) {
     //     return this.http.delete<void>(`https://localhost:5001/api/mlekara/${id}`);

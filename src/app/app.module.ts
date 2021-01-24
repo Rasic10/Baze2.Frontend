@@ -32,6 +32,8 @@ import { UpdateKravaDialog } from './components/krava/dialogs/update-krava.dialo
 import { ZaposlenService } from './services/zaposleni.service';
 import { AddZaposlenDialog } from './components/zaposlen/dialogs/add-zaposleni.dialog/add-zaposlen';
 import { AddKravaDialog } from './components/krava/dialogs/add-krava.dialog/add-krava.dialog';
+import { AddObracunDialog } from './components/obracun/dialogs/add-obracun.dialog/add-obracun.dialog';
+import { UpdateObracunDialog } from './components/obracun/dialogs/update-obracun.dialog/update-obracun.dialog';
 
 
 @NgModule({
@@ -46,6 +48,8 @@ import { AddKravaDialog } from './components/krava/dialogs/add-krava.dialog/add-
     UpdateKravaDialog,
     AddZaposlenDialog,
     AddKravaDialog,
+    AddObracunDialog,
+    UpdateObracunDialog,
 
     // share dialogs
     DialogYesNo,
