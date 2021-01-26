@@ -1,0 +1,65 @@
+<div class="page-content" fxLayout="row wrap">
+    <!-- <div class="page-title">Mlekara</div> -->
+    <div class="page-actions">
+        <div>
+            <button class="addButton" mat-raised-button (click)="add()">
+                Dodaj Kvalitet Mleka
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="page-content is-page-content" fxLayout="row wrap">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="datumKvaliteta">
+            <th mat-header-cell *matHeaderCellDef> Datum Kvaliteta </th>
+            <td id="contact-cell" mat-cell *matCellDef="let element"> {{element.datumKvaliteta}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="rbParametra">
+            <th mat-header-cell *matHeaderCellDef> Rb Parametra </th>
+            <td mat-cell *matCellDef="let element"> {{element.rbParametra}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="rbPodatakaOMuzi">
+            <th mat-header-cell *matHeaderCellDef> Rb Podataka O Muzi </th>
+            <td mat-cell *matCellDef="let element"> {{element.rbPodatakaOMuzi}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="MaticniBroj">
+            <th mat-header-cell *matHeaderCellDef> MaticniBroj </th>
+            <td mat-cell *matCellDef="let element"> {{element.maticniBroj}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="idZivotinje">
+            <th mat-header-cell *matHeaderCellDef> Id Zivotinje </th>
+            <td mat-cell *matCellDef="let element"> {{element.idZivotinje}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="datumPodaciKvaliteta">
+            <th mat-header-cell *matHeaderCellDef> Datum Podaci Kvaliteta </th>
+            <td mat-cell *matCellDef="let element"> {{element.datumPodaciKvaliteta}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="kolicinaMleka">
+            <th mat-header-cell *matHeaderCellDef> Kolicina Mleka </th>
+            <td mat-cell *matCellDef="let element"> {{element.kolicinaMleka}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Actoins">
+            <th class="actions`" mat-header-cell *matHeaderCellDef></th>
+            <td class="form-filed" mat-cell *matCellDef="let element; let i = index"> 
+                <button mat-button [matMenuTriggerFor]="menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="update(element.datumKvaliteta)">Izmeni</button>
+                    <button mat-menu-item (click)="delete(element.datumKvaliteta)">Obrisi</button>
+                  </mat-menu>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

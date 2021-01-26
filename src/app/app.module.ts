@@ -34,6 +34,9 @@ import { AddZaposlenDialog } from './components/zaposlen/dialogs/add-zaposleni.d
 import { AddKravaDialog } from './components/krava/dialogs/add-krava.dialog/add-krava.dialog';
 import { AddObracunDialog } from './components/obracun/dialogs/add-obracun.dialog/add-obracun.dialog';
 import { UpdateObracunDialog } from './components/obracun/dialogs/update-obracun.dialog/update-obracun.dialog';
+import { KvalitetMlekaService } from './services/kvalitet-mleka.service';
+import { KvalitetMlekaComponent } from './components/kvalitet-mleka/kvalitet-mleka.component';
+import { UpdateKvalitetMlekaDialog } from './components/kvalitet-mleka/dialogs/update-kvalitet-mleka.dialog/update-kvalitet-mleka.dialog';
 
 
 @NgModule({
@@ -50,6 +53,7 @@ import { UpdateObracunDialog } from './components/obracun/dialogs/update-obracun
     AddKravaDialog,
     AddObracunDialog,
     UpdateObracunDialog,
+    UpdateKvalitetMlekaDialog,
 
     // share dialogs
     DialogYesNo,
@@ -84,7 +88,7 @@ import { UpdateObracunDialog } from './components/obracun/dialogs/update-obracun
     NgxMatDatetimePickerModule,
 
   ],
-  providers: [MlekaraService, ObracunService, KravaService, PodaciOMuziService, ZaposlenService],
+  providers: [MlekaraService, ObracunService, KravaService, PodaciOMuziService, ZaposlenService, KvalitetMlekaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
