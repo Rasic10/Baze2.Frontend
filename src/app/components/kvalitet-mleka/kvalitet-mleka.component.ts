@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { KvalitetMleka } from 'src/app/models/kvalitet-mleka';
 import { KvalitetMlekaService } from 'src/app/services/kvalitet-mleka.service';
 import { DialogOk } from 'src/app/share/dialog-ok/ok.dialog';
+import { AddKvalitetMlekaDialog } from './dialogs/add-kvalitet-mleka.dialog/add-kvalitet-mleka.dialog';
 import { UpdateKvalitetMlekaDialog } from './dialogs/update-kvalitet-mleka.dialog/update-kvalitet-mleka.dialog';
 
 @Component({
@@ -26,30 +27,30 @@ export class KvalitetMlekaComponent implements OnInit {
   }
 
   add() {
-    // const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-    //   width: '250px',
-    // }).afterClosed().subscribe(result => {
-    //   if (result) {
-    //     this.mlekaraService.post(result).subscribe((response) => {
-    //       console.log("response: ");
-    //       console.log(response);
-    //       this.mlekaraService.get().subscribe(data => this.dataSource = data);
-    //     }, (result) => {
-    //       this.dialog.open(DialogOk, {
-    //         width: '450px',
-    //         data: { errorText: result.error.text }
-    //       });
-    //       console.log("errorText: " + result.error.text);
-    //       console.log(result);
-    //     })
-    //   }
-    // });
+    const dialogRef = this.dialog.open(AddKvalitetMlekaDialog, {
+      width: '260px',
+    }).afterClosed().subscribe(result => {
+      if (result) {
+        this.kvalitetMlekaService.post(result).subscribe((response) => {
+          console.log("response: ");
+          console.log(response);
+          this.kvalitetMlekaService.get().subscribe(data => this.dataSource = data);
+        }, (result) => {
+          this.dialog.open(DialogOk, {
+            width: '450px',
+            data: { errorText: result.error.text }
+          });
+          console.log("errorText: " + result.error.text);
+          console.log(result);
+        })
+      }
+    });
   }
 
   update(date: Date) {
     this.kvalitetMlekaService.getById(date).subscribe(kvalitetMleka => {
       this.dialog.open(UpdateKvalitetMlekaDialog, {
-        width: '250px',
+        width: '260px',
         data: kvalitetMleka
       }).afterClosed().subscribe(result => {
         if (result) {

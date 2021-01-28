@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Dodaj Kvalitet Mleka</h1>
+<div mat-dialog-content fxLayout="row wrap" fxLayoutAlign="space-between center">
+  <mat-form-field>
+    <mat-label>Datum Kvaliteta</mat-label>
+    <input matInput [(ngModel)]="kvalitetMleka.datumKvaliteta" [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Rb Parametra</mat-label>
+    <input matInput [(ngModel)]="kvalitetMleka.rbParametra">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Rb Podataka O Muzi</mat-label>
+    <input matInput [(ngModel)]="kvalitetMleka.rbPodatakaOMuzi">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Id Zivotinje</mat-label>
+    <input matInput [(ngModel)]="kvalitetMleka.idZivotinje">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Datum Podaci Kvaliteta</mat-label>
+    <input matInput [(ngModel)]="kvalitetMleka.datumPodaciKvaliteta" [matDatepicker]="picker2">
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Nazad</button>
+  <button type="submit" class="dodajButton" mat-button [mat-dialog-close]="kvalitetMleka.idZivotinje" cdkFocusInitial (click)="onYesClick()">Dodaj</button>
+</div>

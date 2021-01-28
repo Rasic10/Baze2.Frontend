@@ -2,23 +2,27 @@
 <div mat-dialog-content fxLayout="row wrap" fxLayoutAlign="space-between center">
   <mat-form-field>
     <mat-label>Datum Kvaliteta</mat-label>
-    <input matInput [(ngModel)]="kvalitetMleka.datumKvaliteta">
+    <input matInput [(ngModel)]="kvalitetMleka.datumKvaliteta" disabled [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
   <mat-form-field>
     <mat-label>Rb Parametra</mat-label>
-    <input matInput [(ngModel)]="kvalitetMleka.rbParametra">
+    <input matInput [(ngModel)]="kvalitetMleka.rbParametra" disabled>
   </mat-form-field>
   <mat-form-field>
     <mat-label>Rb Podataka O Muzi</mat-label>
-    <input matInput [(ngModel)]="kvalitetMleka.rbPodatakaOMuzi">
+    <input matInput [(ngModel)]="kvalitetMleka.rbPodatakaOMuzi" disabled>
   </mat-form-field>
   <mat-form-field>
     <mat-label>IdZ ivotinje</mat-label>
-    <input matInput [(ngModel)]="kvalitetMleka.idZivotinje">
+    <input matInput [(ngModel)]="kvalitetMleka.idZivotinje" disabled>
   </mat-form-field>
   <mat-form-field>
     <mat-label>Datum Podaci Kvaliteta</mat-label>
-    <input matInput [(ngModel)]="kvalitetMleka.datumPodaciKvaliteta">
+    <input matInput [(ngModel)]="kvalitetMleka.datumPodaciKvaliteta" [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
   <mat-form-field>
     <mat-label>Kolicina Mleka</mat-label>

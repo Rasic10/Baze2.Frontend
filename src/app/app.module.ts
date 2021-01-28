@@ -12,8 +12,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatDatepickerInput, MatDatepickerModule} from '@angular/material/datepicker';
 import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 import { HttpClientModule } from '@angular/common/http';
 import { MlekaraService } from './services/mlekara.service';
@@ -37,6 +38,8 @@ import { UpdateObracunDialog } from './components/obracun/dialogs/update-obracun
 import { KvalitetMlekaService } from './services/kvalitet-mleka.service';
 import { KvalitetMlekaComponent } from './components/kvalitet-mleka/kvalitet-mleka.component';
 import { UpdateKvalitetMlekaDialog } from './components/kvalitet-mleka/dialogs/update-kvalitet-mleka.dialog/update-kvalitet-mleka.dialog';
+import { AddKvalitetMlekaDialog } from './components/kvalitet-mleka/dialogs/add-kvalitet-mleka.dialog/add-kvalitet-mleka.dialog';
+
 
 
 @NgModule({
@@ -54,6 +57,7 @@ import { UpdateKvalitetMlekaDialog } from './components/kvalitet-mleka/dialogs/u
     AddObracunDialog,
     UpdateObracunDialog,
     UpdateKvalitetMlekaDialog,
+    AddKvalitetMlekaDialog,
 
     // share dialogs
     DialogYesNo,
@@ -82,6 +86,7 @@ import { UpdateKvalitetMlekaDialog } from './components/kvalitet-mleka/dialogs/u
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
+    MatNativeDateModule,
 
     //
     NgxMatTimepickerModule,

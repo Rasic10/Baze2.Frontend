@@ -13,7 +13,7 @@
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <ng-container matColumnDef="datumKvaliteta">
             <th mat-header-cell *matHeaderCellDef> Datum Kvaliteta </th>
-            <td id="contact-cell" mat-cell *matCellDef="let element"> {{element.datumKvaliteta}} </td>
+            <td id="contact-cell" mat-cell *matCellDef="let element"> {{element.datumKvaliteta | date: 'mediumDate'}} </td>
         </ng-container>
 
         <ng-container matColumnDef="rbParametra">
@@ -38,7 +38,7 @@
 
         <ng-container matColumnDef="datumPodaciKvaliteta">
             <th mat-header-cell *matHeaderCellDef> Datum Podaci Kvaliteta </th>
-            <td mat-cell *matCellDef="let element"> {{element.datumPodaciKvaliteta}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.datumPodaciKvaliteta | date: 'mediumDate'}} </td>
         </ng-container>
 
         <ng-container matColumnDef="kolicinaMleka">
