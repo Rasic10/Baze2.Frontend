@@ -39,6 +39,7 @@ import { KvalitetMlekaService } from './services/kvalitet-mleka.service';
 import { KvalitetMlekaComponent } from './components/kvalitet-mleka/kvalitet-mleka.component';
 import { UpdateKvalitetMlekaDialog } from './components/kvalitet-mleka/dialogs/update-kvalitet-mleka.dialog/update-kvalitet-mleka.dialog';
 import { AddKvalitetMlekaDialog } from './components/kvalitet-mleka/dialogs/add-kvalitet-mleka.dialog/add-kvalitet-mleka.dialog';
+import { UpdatePodaciOMuziDialog } from './components/podaci-o-muzi/dialogs/update-podaci-o-muzi.dialog/update-podaci-o-muzi.dialog';
 
 
 
@@ -58,6 +59,7 @@ import { AddKvalitetMlekaDialog } from './components/kvalitet-mleka/dialogs/add-
     UpdateObracunDialog,
     UpdateKvalitetMlekaDialog,
     AddKvalitetMlekaDialog,
+    UpdatePodaciOMuziDialog,
 
     // share dialogs
     DialogYesNo,
